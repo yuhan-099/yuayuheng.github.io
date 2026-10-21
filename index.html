@@ -1130,6 +1130,119 @@ html:not(.interactive) .deck-controls,html:not(.interactive) .section-nav{displa
 #resume .resume{visibility:visible;}
 #resume>.inner>.resume.resume-latest{display:block;}
 #resume .resume.resume-ready{visibility:visible;}
+/* Solution pages give the interface evidence priority over repeated strategy cards. */
+:is(#skeleton,#coverage,#judgment,#evidence,#trace,#control-boundaries,#decision-list,#decision-detail,#decision-proof,#decision-advice,#dsp-navigation,#dsp-journey,#dsp-config-design,#dsp-handoff,#ai-practice) .section-head{margin-bottom:24px;}
+:is(#skeleton,#coverage,#judgment,#evidence,#trace,#control-boundaries,#decision-list,#decision-detail,#decision-proof,#decision-advice,#dsp-navigation,#dsp-journey,#dsp-config-design,#dsp-handoff,#ai-practice) .section-head h2{font-size:clamp(29px,2.15vw,38px);max-width:1100px;}
+:is(#skeleton,#coverage,#judgment,#evidence,#trace,#control-boundaries,#decision-list,#decision-detail,#decision-proof,#decision-advice,#dsp-navigation,#dsp-journey,#dsp-config-design,#dsp-handoff,#ai-practice) .section-head p{max-width:950px;line-height:1.7;}
+:is(#skeleton,#coverage,#judgment,#evidence,#trace,#control-boundaries,#decision-list,#decision-detail,#decision-proof,#decision-advice,#dsp-navigation,#dsp-journey,#dsp-config-design,#dsp-handoff,#ai-practice) .image-button{padding:0;background:transparent;border:0;overflow:hidden;}
+:is(#skeleton,#coverage,#judgment,#evidence,#trace,#control-boundaries,#decision-list,#decision-detail,#decision-proof,#decision-advice,#dsp-navigation,#dsp-journey,#dsp-config-design,#dsp-handoff,#ai-practice) .figure figcaption{display:block!important;font-size:12px;line-height:1.6;margin-top:9px;}
+:is(#coverage .skill-lines,#decision-detail .decision-reading,#decision-advice .advice-reading,#dsp-config-design .dsp-config-decisions){counter-reset:solution-point;}
+:is(#coverage .skill-lines>div,#decision-detail .decision-reading>section,#decision-advice .advice-reading>section,#dsp-config-design .dsp-config-decisions>section){counter-increment:solution-point;background:transparent;border:0;border-top:1px solid #b9cfee;border-radius:0;padding:15px 0;margin:0;}
+:is(#coverage .skill-lines>div,#decision-detail .decision-reading>section,#decision-advice .advice-reading>section,#dsp-config-design .dsp-config-decisions>section)::before{content:"0" counter(solution-point);display:block;color:var(--accent);font-size:11px;font-weight:700;margin-bottom:5px;}
+:is(#coverage .skill-lines,#decision-detail .decision-reading,#decision-advice .advice-reading,#dsp-config-design .dsp-config-decisions) h3{font-size:17px;line-height:1.45;}
+:is(#coverage .skill-lines,#decision-detail .decision-reading,#decision-advice .advice-reading,#dsp-config-design .dsp-config-decisions) p{font-size:13px;line-height:1.7;margin-top:5px;max-width:none;}
+#dsp-navigation .dsp-nav-reasons>section{min-height:0;margin:0;padding:14px 0;border:0;border-top:1px solid #b9cfee;background:transparent;border-radius:0;}
+#dsp-navigation .dsp-nav-reasons h3{font-size:17px;}
+#dsp-navigation .dsp-nav-reasons p{font-size:13px;line-height:1.7;margin-top:5px;}
+#dsp-solution-options .section-head{margin-bottom:24px;}
+#dsp-solution-options .dsp-option{background:transparent;border:0;border-top:2px solid #b9cfee;border-radius:0;padding:16px 0 0;}
+#dsp-solution-options .dsp-option .figure figcaption{display:block!important;font-size:12px;line-height:1.6;margin-top:9px;}
+
+@media(min-width:901px){
+  .slide{padding-left:clamp(48px,4.5vw,100px);padding-right:clamp(48px,4.5vw,100px);}
+  .inner{max-width:1480px;}
+  #collaboration .inner{grid-template-columns:minmax(0,3fr) minmax(0,7fr);}
+  #collaboration .research-evidence-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  #collaboration .research-evidence-flow .image-button{height:220px;}
+  #collaboration .research-evidence-flow .image-button img{width:100%;height:100%;max-height:none;}
+  #collaboration .log-evidence .image-button img{object-fit:contain;}
+  #collaboration .discussion-evidence .image-button img{object-fit:cover;object-position:center 45%;}
+  #collaboration .evidence-bridge{display:none;}
+  :is(#skeleton,#coverage,#judgment,#evidence,#trace,#control-boundaries,#decision-list,#decision-detail,#decision-proof,#decision-advice,#dsp-navigation,#dsp-journey,#dsp-config-design,#dsp-handoff,#ai-practice)>.inner{max-width:1600px;}
+  :is(#skeleton,#coverage,#decision-detail,#decision-advice,#dsp-navigation,#dsp-config-design) :is(.skeleton-solution,.split,.decision-detail-layout,.advice-layout,.dsp-navigation-layout,.dsp-config-design-layout){gap:clamp(28px,3vw,56px);align-items:center;}
+  #skeleton .skeleton-solution{grid-template-columns:minmax(0,1.65fr) minmax(300px,.8fr);}
+  #skeleton .product-demo{grid-column:1;grid-row:1;position:static;}
+  #skeleton .skeleton-logic{grid-column:2;grid-row:1;align-self:stretch;}
+  #skeleton .product-demo .image-button img{width:100%;height:auto;max-height:min(68svh,760px);object-fit:contain;}
+  #coverage .split{grid-template-columns:minmax(0,1.75fr) minmax(280px,.7fr);}
+  #coverage .split>.figure{grid-column:1;grid-row:1;}
+  #coverage .split>div{grid-column:2;grid-row:1;}
+  #coverage .image-button img{width:100%;height:auto;max-height:min(69svh,760px);object-fit:contain;}
+  #decision-detail .decision-detail-layout{grid-template-columns:minmax(0,1.85fr) minmax(300px,.72fr);}
+  #decision-detail .governance-detail-visual{grid-column:1;grid-row:1;}
+  #decision-detail .decision-reading{grid-column:2;grid-row:1;}
+  #decision-detail .image-button img{width:100%;height:auto;max-height:min(70svh,800px);object-fit:contain;}
+  #decision-advice .advice-layout{grid-template-columns:minmax(0,1fr) minmax(310px,1fr);}
+  #decision-advice .advice-full{grid-column:1;grid-row:1;justify-self:end;width:100%;max-width:430px;}
+  #decision-advice .advice-reading{grid-column:2;grid-row:1;}
+  #decision-advice .advice-reading section{display:block;}
+  #decision-advice .advice-full .image-button{width:max-content;max-width:100%;margin-left:auto;}
+  #decision-advice .advice-full .image-button img{width:auto;height:min(70svh,800px);max-width:100%;max-height:none;object-fit:contain;}
+  #dsp-navigation .dsp-navigation-layout{grid-template-columns:minmax(0,1.65fr) minmax(310px,.8fr);}
+  #dsp-navigation .dsp-navigation-evidence{max-width:none;justify-self:stretch;}
+  #dsp-navigation .dsp-navigation-evidence .image-button{height:auto;}
+  #dsp-navigation .dsp-navigation-evidence img{width:100%;height:auto;max-height:min(70svh,800px);object-fit:contain;}
+  #dsp-config-design .dsp-config-design-layout{grid-template-columns:minmax(0,1.85fr) minmax(300px,.75fr);}
+  #dsp-config-design .dsp-config-annotated{grid-column:1;grid-row:1;}
+  #dsp-config-design .dsp-config-decisions{grid-column:2;grid-row:1;}
+  #dsp-config-design .dsp-config-annotated .image-button{height:auto;}
+  #dsp-config-design .dsp-config-annotated img{width:100%;height:auto;max-height:min(70svh,800px);object-fit:contain;}
+  #dsp-journey .dsp-journey-example{margin-top:18px;}
+  #dsp-journey .dsp-journey-example .image-button{height:auto;}
+  #dsp-journey .dsp-journey-example img{position:static;width:100%;height:auto;max-height:min(65svh,740px);object-fit:contain;}
+  #dsp-journey .dsp-flow{gap:14px;}
+  #dsp-journey .dsp-flow>div{padding:11px 14px;}
+  #decision-list .governance-list-visual .image-button img{width:100%;height:auto;max-height:min(70svh,800px);object-fit:contain;}
+  #judgment .judgment-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:24px;}
+  #judgment .judgment-grid .image-button{aspect-ratio:auto;}
+  #judgment .judgment-grid .image-button img{width:100%;height:auto;max-height:min(60svh,680px);object-fit:contain;}
+  #judgment .summary-focus .image-button{aspect-ratio:1.65;}
+  #judgment .summary-focus .image-button img{height:100%;max-height:none;object-fit:cover;object-position:center 23%;}
+  #decision-proof .proof-demo-grid{gap:24px;}
+  #decision-proof .proof-demo-grid .image-button img{width:100%;height:auto;max-height:min(58svh,650px);object-fit:contain;}
+  #evidence .evidence-review{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(280px,.7fr);gap:32px;align-items:center;}
+  #evidence .evidence-detail{grid-column:1;grid-row:1;}
+  #evidence .evidence-review>div:first-child{grid-column:2;grid-row:1;}
+  #evidence .evidence-detail .image-button{aspect-ratio:2;}
+  #evidence .evidence-detail .image-button img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:center bottom;}
+  #trace .trace-demo{max-width:1480px;}
+  #trace .trace-demo .image-button img{width:100%;height:auto;max-height:min(70svh,800px);object-fit:contain;}
+  #control-boundaries .image-button img{max-height:min(62svh,700px);object-fit:contain;}
+  #dsp-solution-options .dsp-option-grid{gap:24px;}
+  #dsp-solution-options .dsp-option .image-button{height:auto;min-height:0;aspect-ratio:auto;}
+  #dsp-solution-options .dsp-option .image-button img{position:static;width:100%;height:auto;max-height:min(43svh,470px);object-fit:contain;}
+  #dsp-solution-options .dsp-option:nth-child(2) .image-button{position:relative;aspect-ratio:3.2;overflow:hidden;}
+  #dsp-solution-options .dsp-option:nth-child(2) .image-button img{position:absolute;top:0;right:0;width:110%;height:auto;max-width:none;max-height:none;}
+  #dsp-handoff .dsp-reorganized-stages .image-button{height:auto;min-height:0;}
+  #dsp-handoff .dsp-reorganized-stages img{position:static;width:100%;height:auto;max-height:min(49svh,540px);object-fit:contain;}
+  #ai-practice .ai-single-run{grid-template-columns:minmax(280px,.62fr) minmax(0,1.7fr);gap:24px;}
+  #ai-practice .ai-single-run-demo .image-button{height:auto;min-height:0;}
+  #ai-practice .ai-single-run-demo .image-button img{width:100%;height:auto;max-height:min(67svh,740px);object-fit:contain;}
+  #control-boundaries .control-solution-grid{grid-template-columns:minmax(0,3fr) minmax(0,7fr);gap:24px;}
+}
+@media(min-width:1600px){
+  .slide{padding-left:max(4.5vw,calc((100vw - 1600px)/2));padding-right:max(4.5vw,calc((100vw - 1600px)/2));}
+  .slide>.inner{width:100%;}
+  :is(#skeleton,#coverage,#judgment,#evidence,#trace,#control-boundaries,#decision-list,#decision-detail,#decision-proof,#decision-advice,#dsp-navigation,#dsp-journey,#dsp-config-design,#dsp-handoff,#ai-practice){padding-top:48px;padding-bottom:54px;}
+}
+@media(max-width:900px){
+  :is(#skeleton,#coverage,#decision-detail,#decision-advice,#dsp-navigation,#dsp-config-design) :is(.skeleton-solution,.split,.decision-detail-layout,.advice-layout,.dsp-navigation-layout,.dsp-config-design-layout){display:flex;flex-direction:column;align-items:stretch;}
+  :is(#skeleton,#coverage,#decision-detail,#decision-advice,#dsp-navigation,#dsp-config-design) .image-button img{width:100%;height:auto;max-height:none;object-fit:contain;}
+  #judgment .judgment-grid .image-button{aspect-ratio:auto;}
+  #judgment .judgment-grid .image-button img{width:100%;height:auto;max-height:none;object-fit:contain;}
+  #judgment .summary-focus .image-button{aspect-ratio:1.5;}
+  #judgment .summary-focus .image-button img{height:100%;object-fit:cover;object-position:center 23%;}
+  #dsp-navigation .dsp-navigation-evidence .image-button,
+  #dsp-config-design .dsp-config-annotated .image-button{height:auto;}
+  #dsp-navigation .dsp-navigation-evidence img,
+  #dsp-config-design .dsp-config-annotated img{position:static;width:100%;height:auto;max-height:none;}
+  #dsp-journey .dsp-journey-example .image-button{height:auto;}
+  #dsp-journey .dsp-journey-example img{position:static;width:100%;height:auto;max-height:none;}
+  #dsp-handoff .dsp-reorganized-stages .image-button{height:auto;}
+  #dsp-handoff .dsp-reorganized-stages img{position:static;width:100%;height:auto;max-height:none;}
+  #dsp-solution-options .dsp-option .image-button{height:auto;}
+  #dsp-solution-options .dsp-option .image-button img{position:static;width:100%;height:auto;max-height:none;}
+}
 /* Keep the static file preview in the same order as the interactive deck. */
 html:not(.interactive) #portfolio-index .portfolio-project-entry:nth-child(1){order:3;}
 html:not(.interactive) #portfolio-index .portfolio-project-entry:nth-child(2){order:1;}
